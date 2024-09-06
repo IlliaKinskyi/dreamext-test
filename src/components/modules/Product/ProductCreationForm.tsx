@@ -1,8 +1,9 @@
-import { useFormContext } from 'react-hook-form';
+import { Controller, useForm, useFormContext } from 'react-hook-form';
 import { FormControlLabel, Switch, TextField } from '@mui/material';
 
 export default function ProductCreationForm() {
   const {
+    control,
     register,
     formState: { errors },
   } = useFormContext();
@@ -34,7 +35,16 @@ export default function ProductCreationForm() {
         helperText={errors.description?.message?.toString()}
       />
 
-      <FormControlLabel label='Published' control={<Switch {...register('published')} />} />
+      <FormControlLabel
+        label='Published'
+        control={
+          <Controller
+            name='published'
+            control={control}
+            render={({ field: { value, ...field } }) => <Switch checked={!!value} {...field} />}
+          />
+        }
+      />
     </>
   );
 }
