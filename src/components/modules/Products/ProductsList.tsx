@@ -39,6 +39,7 @@ export default function ProductsList() {
   useEffect(() => {
     if (isFirstRender.current) {
       const getSelected = searchParams.get('selected');
+      const getNumberProducts = searchParams.get('numberProducts');
       const getShowPublished = searchParams.get('published');
       const convertShowPublished = getShowPublished === 'true' ? true : false;
 
@@ -46,6 +47,12 @@ export default function ProductsList() {
         setSelectedList(getSelected);
       } else {
         setSearchParams({ selected: selectedList });
+      }
+
+      if (getNumberProducts) {
+        setNumberProducts(+getNumberProducts);
+      } else {
+        setSearchParams({ numberProducts: numberProducts.toString() });
       }
 
       if (getShowPublished) {
@@ -62,8 +69,12 @@ export default function ProductsList() {
   }, []);
 
   useEffect(() => {
-    setSearchParams({ selected: selectedList, published: showPublished.toString() });
-  }, [selectedList, showPublished]);
+    setSearchParams({
+      selected: selectedList,
+      published: showPublished.toString(),
+      numberProducts: numberProducts.toString(),
+    });
+  }, [selectedList, showPublished, numberProducts]);
 
   return (
     <>
@@ -132,6 +143,7 @@ export default function ProductsList() {
           {selectedList === 'formItems'
             ? formItems
                 .filter((item) => item.published === showPublished)
+                .slice(0, numberProducts)
                 .map((item) => <FormProductItem key={item.id} product={item} />)
             : apiItems.map((item) => <ApiProductItem key={item.id} product={item} />)}
         </Box>
