@@ -1,4 +1,4 @@
-import { Controller, useForm, useFormContext } from 'react-hook-form';
+import { Controller, useFormContext } from 'react-hook-form';
 import { FormControlLabel, Switch, TextField } from '@mui/material';
 
 export default function ProductCreationForm() {
@@ -41,6 +41,7 @@ export default function ProductCreationForm() {
           <Controller
             name='published'
             control={control}
+            defaultValue={false}
             render={({ field: { value, ...field } }) => <Switch checked={!!value} {...field} />}
           />
         }
