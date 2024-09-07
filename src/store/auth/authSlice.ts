@@ -16,6 +16,7 @@ const authSlice = createSlice({
       state.isAuth = false;
       state.token = '';
       state.status = authStatus.LOADING;
+      sessionStorage.removeItem('auth');
     },
   },
   extraReducers: (builder) => {

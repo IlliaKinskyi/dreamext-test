@@ -1,4 +1,4 @@
-import { Box, Breadcrumbs, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import BreadcrumbsComponent from '../../components/modules/BreadcrumbsComponent/BreadcrumbsComponent';
 
 export default function SecretPage() {
