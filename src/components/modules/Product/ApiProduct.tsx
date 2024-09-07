@@ -4,7 +4,7 @@ import { TApiProductsItem } from '../../../store/apiProducts/types';
 import axios from 'axios';
 import { Endpoints } from '../../../constants/api';
 import { CardContent, CardMedia, Container, Rating, Typography } from '@mui/material';
-import BreadcrumbsComponent from '../../BreadcrumbsComponent/BreadcrumbsComponent';
+import BreadcrumbsComponent from '../BreadcrumbsComponent/BreadcrumbsComponent';
 import { NAV_URL } from '../Content/global';
 
 export default function ApiProduct({ id }: { id: string | undefined }) {

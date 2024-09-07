@@ -16,7 +16,7 @@ import {
   Switch,
   Typography,
 } from '@mui/material';
-import BreadcrumbsComponent from '../../BreadcrumbsComponent/BreadcrumbsComponent';
+import BreadcrumbsComponent from '../BreadcrumbsComponent/BreadcrumbsComponent';
 import { selectFormProductsFiltered } from '../../../store/formProducts/selectors';
 import FormProductItem from './FormProductItem';
 import { useSearchParams } from 'react-router-dom';

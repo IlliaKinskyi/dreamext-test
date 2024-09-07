@@ -3,4 +3,5 @@ export const NAV_URL = {
   PRODUCT_PAGE: '/products',
   PRODUCT: '/products/',
   ADD_PROTUDCT: '/add',
+  SECRET: '/secret',
 };

@@ -1,4 +1,4 @@
-import BreadcrumbsComponent from '../../BreadcrumbsComponent/BreadcrumbsComponent';
+import BreadcrumbsComponent from '../BreadcrumbsComponent/BreadcrumbsComponent';
 import { Button, Container, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { selectFormProduct } from '../../../store/formProducts/selectors';

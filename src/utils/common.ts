@@ -6,3 +6,10 @@ export const getDataFromLocalStorage = () => {
 
   return products;
 };
+
+export const getDataFromSessionStorage = () => {
+  const data = sessionStorage.getItem('auth');
+  const isAuth: boolean = data ? JSON.parse(data) : false;
+
+  return isAuth;
+};
